@@ -1,0 +1,70 @@
+*
+*******************************************
+*
+*BZX84-C4V3
+*
+*NXP Semiconductors
+*
+*Voltage regulator diode
+*
+*
+*
+*
+*
+*VFmax = 0,9V @ IF = 10mA
+*IRmax = 3µA  @ VR = 1V
+*
+*VZmax = 4,6V @ IZ = 5mA
+*
+*
+*
+*PTOTmax = 250mW
+*
+*
+*
+*Package pinning does not match Spice model pinning.
+*Package: SOT23
+*
+*Package Pin 1: Anode
+*Package Pin 2: not connected
+*Package Pin 3: Cathode
+*
+*
+*Extraction date (week/year): 05/2016
+*Simulator: SPICE2
+*
+*******************************************
+*#
+.SUBCKT BZX84_C4V3 1 2
+ R1 1 2 5E+011
+ D1 1 2
+ + DIODE1
+ D2 3 1
+ + DIODE2
+ VZ 2 3 0.002
+*
+*The resistor R1, the diode D2 and
+*VZ do not  reflect
+*physical devices but improve
+*only modeling in the reverse
+*mode of operation.
+*
+ .MODEL DIODE1 D
+ + IS = 5E-015
+ + N = 1.07
+ + BV = 4.22
+ + IBV = 1E-010
+ + RS = 0.45
+ + CJO = 1.43E-010
+ + VJ = 0.6
+ + M = 0.31
+ + FC = 0.5
+ + TT = 0
+ + EG = 1.1
+ + XTI = 3
+ .MODEL DIODE2 D
+ + IS = 3.5E-011
+ + N = 8.64
+ + RS = 13
+ .ENDS
+*

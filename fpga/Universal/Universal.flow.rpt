@@ -1,0 +1,140 @@
+Flow report for Universal
+Sat May 20 01:44:15 2017
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Flow Summary                                                          ;
++-----------------------+-----------------------------------------------+
+; Flow Status           ; Successful - Sat May 20 01:25:55 2017         ;
+; Quartus II Version    ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
+; Revision Name         ; Universal                                     ;
+; Top-level Entity Name ; univ                                          ;
+; Family                ; Cyclone                                       ;
+; Device                ; EP1C3T144C8                                   ;
+; Timing Models         ; Final                                         ;
+; Total logic elements  ; 1,672 / 2,910 ( 57 % )                        ;
+; Total pins            ; 98 / 104 ( 94 % )                             ;
+; Total virtual pins    ; 0                                             ;
+; Total memory bits     ; 0 / 59,904 ( 0 % )                            ;
+; Total PLLs            ; 0 / 1 ( 0 % )                                 ;
++-----------------------+-----------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 05/20/2017 01:25:03 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Universal           ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                  ;
++-----------------------------------------------------------+---------------------------------+--------------------------------+-------------+----------------------+
+; Assignment Name                                           ; Value                           ; Default Value                  ; Entity Name ; Section Id           ;
++-----------------------------------------------------------+---------------------------------+--------------------------------+-------------+----------------------+
+; ALLOW_LVTTL_LVCMOS_INPUT_LEVELS_TO_OVERDRIVE_INPUT_BUFFER ; On                              ; Off                            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID                                     ; 203178709730867.149523630205150 ; --                             ; --          ; --                   ;
+; CYCLONE_OPTIMIZATION_TECHNIQUE                            ; Speed                           ; Balanced                       ; --          ; --                   ;
+; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL                           ; Design Compiler                 ; <None>                         ; --          ; --                   ;
+; EDA_INPUT_DATA_FORMAT                                     ; Vhdl                            ; --                             ; --          ; eda_design_synthesis ;
+; EDA_INPUT_VCC_NAME                                        ; Vdd                             ; --                             ; --          ; eda_design_synthesis ;
+; EDA_LMF_FILE                                              ; altsyn.lmf                      ; --                             ; --          ; eda_design_synthesis ;
+; EDA_OUTPUT_DATA_FORMAT                                    ; Vhdl                            ; --                             ; --          ; eda_simulation       ;
+; EDA_OUTPUT_DATA_FORMAT                                    ; Verilog Hdl                     ; --                             ; --          ; eda_timing_analysis  ;
+; EDA_SIMULATION_TOOL                                       ; ModelSim-Altera (VHDL)          ; <None>                         ; --          ; --                   ;
+; EDA_TIMING_ANALYSIS_TOOL                                  ; PrimeTime (Verilog)             ; <None>                         ; --          ; --                   ;
+; ENABLE_DRC_SETTINGS                                       ; On                              ; Off                            ; --          ; --                   ;
+; ENABLE_SIGNALTAP                                          ; Off                             ; --                             ; --          ; --                   ;
+; HDL_MESSAGE_LEVEL                                         ; Level3                          ; Level2                         ; --          ; --                   ;
+; IOBANK_VCCIO                                              ; 3.3V                            ; --                             ; --          ; 1                    ;
+; IOBANK_VCCIO                                              ; 3.3V                            ; --                             ; --          ; 4                    ;
+; IOBANK_VCCIO                                              ; 3.3V                            ; --                             ; --          ; 3                    ;
+; IOBANK_VCCIO                                              ; 3.3V                            ; --                             ; --          ; 2                    ;
+; OPTIMIZE_HOLD_TIMING                                      ; All Paths                       ; IO Paths and Minimum TPD Paths ; --          ; --                   ;
+; OPTIMIZE_MULTI_CORNER_TIMING                              ; On                              ; Off                            ; --          ; --                   ;
+; PARTITION_COLOR                                           ; 16764057                        ; --                             ; univ        ; Top                  ;
+; PARTITION_FITTER_PRESERVATION_LEVEL                       ; PLACEMENT_AND_ROUTING           ; --                             ; univ        ; Top                  ;
+; PARTITION_NETLIST_TYPE                                    ; SOURCE                          ; --                             ; univ        ; Top                  ;
+; SMART_RECOMPILE                                           ; On                              ; Off                            ; --          ; --                   ;
+; SYNTH_TIMING_DRIVEN_SYNTHESIS                             ; Off                             ; --                             ; --          ; --                   ;
+; TIMEQUEST_MULTICORNER_ANALYSIS                            ; On                              ; Off                            ; --          ; --                   ;
+; TOP_LEVEL_ENTITY                                          ; univ                            ; Universal                      ; --          ; --                   ;
+; USE_SIGNALTAP_FILE                                        ; stp_data_dir.stp                ; --                             ; --          ; --                   ;
++-----------------------------------------------------------+---------------------------------+--------------------------------+-------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; --                  ; 00:00:05                           ;
+; Fitter                    ; 00:00:35     ; 1.0                     ; --                  ; 00:00:34                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; --                  ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; --                  ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; --                  ; 00:00:03                           ;
+; Total                     ; 00:00:50     ; --                      ; --                  ; 00:00:47                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                               ;
++---------------------------+------------------+------------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name          ; OS Version ; Processor type ;
++---------------------------+------------------+------------------+------------+----------------+
+; Analysis & Synthesis      ; wojtek-e6430     ; Debian GNU/Linux ; 9          ; x86_64         ;
+; Fitter                    ; wojtek-e6430     ; Debian GNU/Linux ; 9          ; x86_64         ;
+; Assembler                 ; wojtek-e6430     ; Debian GNU/Linux ; 9          ; x86_64         ;
+; TimeQuest Timing Analyzer ; wojtek-e6430     ; Debian GNU/Linux ; 9          ; x86_64         ;
+; TimeQuest Timing Analyzer ; wojtek-e6430     ; Debian GNU/Linux ; 9          ; x86_64         ;
++---------------------------+------------------+------------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Universal -c Universal
+quartus_fit --read_settings_files=off --write_settings_files=off Universal -c Universal
+quartus_asm --read_settings_files=off --write_settings_files=off Universal -c Universal
+quartus_sta Universal -c Universal
+quartus_sta Universal -c Universal
+
+
+

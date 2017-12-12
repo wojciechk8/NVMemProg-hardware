@@ -1,0 +1,106 @@
+#!/usr/bin/perl
+# -*- perl -*-
+
+# Desc: Duplicates n times selected fragment of pcb layout in distance
+#       of dx, dy
+
+$input = $ARGV[0];
+$output = $input.".dup";
+open($outf, ">$output") || die "Could not open $output for output";
+
+my $n = 11;
+my $dx = 0;
+my $dy= 210;
+my $unit = "mil";
+
+while (<>) {
+  #~# Delete elements we are going to replace by duplicated ones
+  #~if(/Element\[.*\".*\"\s\".*\"\s\"S(\d+)\/S(\d+)\/\w+\d+\"/){
+    #~if(($1==1 && $2!=1) || $1!=1){
+      #~local $/ = "\t)\n";
+      #~$nothing = <>;
+      #~next;
+    #~}
+  #~}
+  print {$outf} $_;
+
+  # Duplicate selected vias
+  if(/Via\[(\d+\.?\d*)(mil|mm)?\s(\d+\.?\d*)(mil|mm)?(.*\".*selected.*\")\]/){
+    my $x = $1;
+    my $x_unit = $2;
+    my $y = $3;
+    my $y_unit = $4;
+    my $rest = $5;
+    if($x_unit ne $unit){
+      $x = $x_unit eq "mm" ? $x/0.0254 : $x*0.0254;
+    }
+    if($y_unit ne $unit){
+      $y = $y_unit eq "mm" ? $y/0.0254 : $y*0.0254;
+    }
+    for my $i (1..$n){
+      print {$outf} "Via[".($x+($i*$dx)).$unit." ".($y+($i*$dy)).$unit.$rest."]\n";
+    }
+    next;
+  }
+
+  # Duplicate selected lines
+  if(/Line\[(\d+\.?\d*)(mil|mm)?\s(\d+\.?\d*)(mil|mm)?\s(\d+\.?\d*)(mil|mm)?\s(\d+\.?\d*)(mil|mm)?(.*\".*selected.*\")\]/){
+    my $x1 = $1;
+    my $x1_unit = $2;
+    my $y1 = $3;
+    my $y1_unit = $4;
+    my $x2 = $5;
+    my $x2_unit = $6;
+    my $y2 = $7;
+    my $y2_unit = $8;
+    my $rest = $9;
+    if($x1_unit ne $unit){
+      $x1 = $x1_unit eq "mm" ? $x1/0.0254 : $x1*0.0254;
+    }
+    if($y1_unit ne $unit){
+      $y1 = $y1_unit eq "mm" ? $y1/0.0254 : $y1*0.0254;
+    }
+    if($x2_unit ne $unit){
+      $x2 = $x2_unit eq "mm" ? $x2/0.0254 : $x2*0.0254;
+    }
+    if($y2_unit ne $unit){
+      $y2 = $y2_unit eq "mm" ? $y2/0.0254 : $y2*0.0254;
+    }
+    for my $i (1..$n){
+      print {$outf} "\tLine[".($x1+($i*$dx)).$unit." ".($y1+($i*$dy)).$unit." ".($x2+($i*$dx)).$unit." ".($y2+($i*$dy)).$unit.$rest."]\n";
+    }
+    next;
+  }
+
+  # Duplicate selected elements
+  if(/Element\[(.*\".*selected.*\"\s\".*\"\s)\"([A-Z]+)(\d+)(\"\s\".*\"\s)(\d+\.?\d*)(mil|mm)?\s(\d+\.?\d*)(mil|mm)?(.*)\]/){
+    my $rest1 = $1;
+    my $refdes_l = $2;
+    my $refdes_n = $3;
+    my $rest2 = $4;
+    my $x = $5;
+    my $x_unit = $6;
+    my $y = $7;
+    my $y_unit = $8;
+    my $rest3 = $9;
+    if($x_unit ne $unit){
+      $x = $x_unit eq "mm" ? $x/0.0254 : $x*0.0254;
+    }
+    if($y_unit ne $unit){
+      $y = $y_unit eq "mm" ? $y/0.0254 : $y*0.0254;
+    }
+    local $/ = "\t)\n";
+    $element_data = <>."\n";
+    print {$outf} $element_data;
+    my $refn = $refdes_n;
+    for my $i (1..$n){
+      $refn = $refdes_l eq "D" ? $refn+4 : $refn+8;
+      if ($i == 6) { $refn = $refdes_n+100; }
+      print {$outf} "Element[$rest1\"".$refdes_l.$refn.$rest2.($x+($i*$dx)).$unit." ".($y+($i*$dy)).$unit.$rest3."]\n";
+      print {$outf} $element_data;
+    }
+    next;
+  }
+}
+
+close($outf) || die "Could not close $output";

@@ -1,0 +1,555 @@
+Analysis & Synthesis report for Universal
+Sat May 20 01:25:08 2017
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |univ
+ 10. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:0:DATA_FX_MUX_X
+ 11. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:1:DATA_FX_MUX_X
+ 12. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:2:DATA_FX_MUX_X
+ 13. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:3:DATA_FX_MUX_X
+ 14. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:4:DATA_FX_MUX_X
+ 15. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:5:DATA_FX_MUX_X
+ 16. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:6:DATA_FX_MUX_X
+ 17. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:7:DATA_FX_MUX_X
+ 18. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:8:DATA_FX_MUX_X
+ 19. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:9:DATA_FX_MUX_X
+ 20. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:10:DATA_FX_MUX_X
+ 21. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:11:DATA_FX_MUX_X
+ 22. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:12:DATA_FX_MUX_X
+ 23. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:13:DATA_FX_MUX_X
+ 24. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:14:DATA_FX_MUX_X
+ 25. Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:15:DATA_FX_MUX_X
+ 26. Parameter Settings for User Entity Instance: RDY_FX_MUX:\GEN_RDY_FX_MUX:0:RDY_FX_MUX_X
+ 27. Parameter Settings for User Entity Instance: RDY_FX_MUX:\GEN_RDY_FX_MUX:1:RDY_FX_MUX_X
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat May 20 01:25:08 2017         ;
+; Quartus II Version          ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
+; Revision Name               ; Universal                                     ;
+; Top-level Entity Name       ; univ                                          ;
+; Family                      ; Cyclone                                       ;
+; Total logic elements        ; 2,068                                         ;
+; Total pins                  ; 98                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP1C3T144C8        ;                    ;
+; Top-level entity name                                                      ; univ               ; Universal          ;
+; Family name                                                                ; Cyclone            ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; On                 ; Off                ;
+; Optimization Technique                                                     ; Speed              ; Balanced           ;
+; Type of Retiming Performed During Resynthesis                              ; Full               ;                    ;
+; Resynthesis Optimization Effort                                            ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                                   ; Normal             ;                    ;
+; Use Generated Physical Constraints File                                    ; On                 ;                    ;
+; HDL message level                                                          ; Level3             ; Level2             ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+
+; rdy_fx_mux.vhd                   ; yes             ; User VHDL File  ; /home/wojtek/Dropbox/Elektronika/NVMemProg/fpga/Universal/rdy_fx_mux.vhd  ;
+; mem_mux.vhd                      ; yes             ; User VHDL File  ; /home/wojtek/Dropbox/Elektronika/NVMemProg/fpga/Universal/mem_mux.vhd     ;
+; data_fx_mux.vhd                  ; yes             ; User VHDL File  ; /home/wojtek/Dropbox/Elektronika/NVMemProg/fpga/Universal/data_fx_mux.vhd ;
+; univ.vhd                         ; yes             ; User VHDL File  ; /home/wojtek/Dropbox/Elektronika/NVMemProg/fpga/Universal/univ.vhd        ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 2068   ;
+;     -- Combinational with no register       ; 1672   ;
+;     -- Register only                        ; 396    ;
+;     -- Combinational with a register        ; 0      ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 1509   ;
+;     -- 3 input functions                    ; 147    ;
+;     -- 2 input functions                    ; 16     ;
+;     -- 1 input functions                    ; 0      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 2068   ;
+;     -- arithmetic mode                      ; 0      ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 0      ;
+;     -- asynchronous clear/load mode         ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 396    ;
+; I/O pins                                    ; 98     ;
+; Maximum fan-out node                        ; reg_wr ;
+; Maximum fan-out                             ; 396    ;
+; Total fan-out                               ; 7827   ;
+; Average fan-out                             ; 3.61   ;
++---------------------------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++----------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                 ; Library Name ;
++----------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------+--------------+
+; |univ                                              ; 2068 (88)   ; 396          ; 0           ; 98   ; 0            ; 1672 (88)    ; 396 (0)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ                                               ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:0:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:0:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:10:DATA_FX_MUX_X| ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:10:DATA_FX_MUX_X ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:11:DATA_FX_MUX_X| ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:11:DATA_FX_MUX_X ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:12:DATA_FX_MUX_X| ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:12:DATA_FX_MUX_X ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:13:DATA_FX_MUX_X| ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:13:DATA_FX_MUX_X ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:14:DATA_FX_MUX_X| ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:14:DATA_FX_MUX_X ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:15:DATA_FX_MUX_X| ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:15:DATA_FX_MUX_X ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:1:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:1:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:2:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:2:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:3:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:3:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:4:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:4:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:5:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:5:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:6:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:6:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:7:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:7:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:8:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:8:DATA_FX_MUX_X  ;              ;
+;    |DATA_FX_MUX:\GEN_DATA_FX_MUX:9:DATA_FX_MUX_X|  ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|DATA_FX_MUX:\GEN_DATA_FX_MUX:9:DATA_FX_MUX_X  ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:0:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:0:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:10:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:10:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:11:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:11:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:12:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:12:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:13:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:13:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:14:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:14:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:15:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:15:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:16:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:16:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:17:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:17:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:18:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:18:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:19:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:19:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:1:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:1:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:20:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:20:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:21:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:21:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:22:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:22:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:23:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:23:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:24:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:24:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:25:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:25:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:26:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:26:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:27:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:27:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:28:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:28:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:29:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:29:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:2:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:2:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:30:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:30:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:31:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:31:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:32:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:32:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:33:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:33:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:34:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:34:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:35:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:35:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:36:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:36:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:37:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:37:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:38:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:38:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:39:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:39:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:3:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:3:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:40:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:40:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:41:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:41:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:42:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:42:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:43:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:43:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:44:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:44:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:45:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:45:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:46:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:46:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:47:MEM_MUX_X|             ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:47:MEM_MUX_X             ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:4:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:4:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:5:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:5:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:6:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:6:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:7:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:7:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:8:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:8:MEM_MUX_X              ;              ;
+;    |MEM_MUX:\GEN_MEM_MUX:9:MEM_MUX_X|              ; 27 (27)     ; 6            ; 0           ; 0    ; 0            ; 21 (21)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|MEM_MUX:\GEN_MEM_MUX:9:MEM_MUX_X              ;              ;
+;    |RDY_FX_MUX:\GEN_RDY_FX_MUX:0:RDY_FX_MUX_X|     ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|RDY_FX_MUX:\GEN_RDY_FX_MUX:0:RDY_FX_MUX_X     ;              ;
+;    |RDY_FX_MUX:\GEN_RDY_FX_MUX:1:RDY_FX_MUX_X|     ; 38 (38)     ; 6            ; 0           ; 0    ; 0            ; 32 (32)      ; 6 (6)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |univ|RDY_FX_MUX:\GEN_RDY_FX_MUX:1:RDY_FX_MUX_X     ;              ;
++----------------------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-----------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 396   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 396   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |univ ;
++------------------+-------+-------------------------------------------+
+; Parameter Name   ; Value ; Type                                      ;
++------------------+-------+-------------------------------------------+
+; NUM_MEM_PINS     ; 48    ; Signed Integer                            ;
+; NUM_ADDR_DECODER ; 50    ; Signed Integer                            ;
++------------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:0:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:1:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:2:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:3:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:4:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:5:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:6:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:7:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:8:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:9:DATA_FX_MUX_X ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:10:DATA_FX_MUX_X ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:11:DATA_FX_MUX_X ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:12:DATA_FX_MUX_X ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:13:DATA_FX_MUX_X ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:14:DATA_FX_MUX_X ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DATA_FX_MUX:\GEN_DATA_FX_MUX:15:DATA_FX_MUX_X ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RDY_FX_MUX:\GEN_RDY_FX_MUX:0:RDY_FX_MUX_X ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RDY_FX_MUX:\GEN_RDY_FX_MUX:1:RDY_FX_MUX_X ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; num_mem_pins   ; 48    ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat May 20 01:25:02 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Universal -c Universal
+Warning: Parallel compilation is not licensed and has been disabled
+Info: Found 2 design units, including 1 entities, in source file rdy_fx_mux.vhd
+    Info: Found design unit 1: RDY_FX_MUX-rtl
+    Info: Found entity 1: RDY_FX_MUX
+Info: Found 2 design units, including 1 entities, in source file mem_mux.vhd
+    Info: Found design unit 1: MEM_MUX-rtl
+    Info: Found entity 1: MEM_MUX
+Info: Found 2 design units, including 1 entities, in source file data_fx_mux.vhd
+    Info: Found design unit 1: DATA_FX_MUX-rtl
+    Info: Found entity 1: DATA_FX_MUX
+Info: Found 2 design units, including 1 entities, in source file univ.vhd
+    Info: Found design unit 1: univ-rtl
+    Info: Found entity 1: univ
+Info: Elaborating entity "univ" for the top level hierarchy
+Info (10035): Verilog HDL or VHDL information at univ.vhd(18): object "clk_fx" declared but not used
+Info (10035): Verilog HDL or VHDL information at univ.vhd(23): object "reg_rd" declared but not used
+Warning (10862): input port "reg_data[7..6]" at univ.vhd(21) has no fan-out
+Warning (10862): input port "clk_fx" at univ.vhd(18) has no fan-out
+Warning (10862): input port "reg_rd" at univ.vhd(23) has no fan-out
+Info: Elaborating entity "MEM_MUX" for hierarchy "MEM_MUX:\GEN_MEM_MUX:0:MEM_MUX_X"
+Info: Elaborating entity "DATA_FX_MUX" for hierarchy "DATA_FX_MUX:\GEN_DATA_FX_MUX:0:DATA_FX_MUX_X"
+Info: Elaborating entity "RDY_FX_MUX" for hierarchy "RDY_FX_MUX:\GEN_RDY_FX_MUX:0:RDY_FX_MUX_X"
+Info (10035): Verilog HDL or VHDL information at rdy_fx_mux.vhd(27): object "io_buf" declared but not used
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Warning: Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk_fx"
+    Warning (15610): No output dependent on input pin "reg_data[6]"
+    Warning (15610): No output dependent on input pin "reg_data[7]"
+    Warning (15610): No output dependent on input pin "reg_rd"
+Info: Implemented 2166 device resources after synthesis - the final resource count might be different
+    Info: Implemented 32 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 64 bidirectional pins
+    Info: Implemented 2068 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 290 megabytes
+    Info: Processing ended: Sat May 20 01:25:08 2017
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+

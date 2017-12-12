@@ -1,0 +1,92 @@
+*
+**********************************************************
+*
+* PDTA114EU
+*
+* NXP Semiconductors
+*
+* Resistor Equipped PNP Transistor (RET)
+* IC   = 100 mA
+* VCEO = 50 V
+* hFE  = min. 5 @ 5V/5mA
+* R1   = 10 Kohm
+* R2   = 10 Kohm
+*
+*
+* Package pinning does not match Spice model pinning.
+* Package: SOT 323
+*
+* Package Pin 1: Base
+* Package Pin 2: Emitter
+* Package Pin 3: Collector
+*
+*
+* Extraction date (week/year): 43/2014
+* Simulator: Spice 3
+*
+**********************************************************
+*sb#
+* Please note: ---Resistances R1 and R2 are not part of the
+* model and have to be added separately.---
+* Diode D is dedicated to improve modeling in  reverse
+* area of operation and does not reflect a physical device.
+*
+.SUBCKT PDTA114EU 1 4 3
+*
+Q1 1 2 3 MAIN
+D1 1 2 DIODE
+R1 4 2 10K
+R2 2 3 10K
+.MODEL MAIN PNP
++ IS = 1.656E-014
++ NF = 0.9954
++ ISE = 5.941E-015
++ NE = 1.6
++ BF = 319.1
++ IKF = 0.04633
++ VAF = 7.981
++ NR = 0.9949
++ ISC = 1E-018
++ NC = 0.9168
++ BR = 12.77
++ IKR = 0.05607
++ VAR = 24.01
++ RB = 39.4
++ IRB = 0.0001259
++ RBM = 3.4
++ RE = 0.3
++ RC = 0.3184
++ XTB = 0
++ EG = 1.11
++ XTI = 3
++ CJE = 9.067E-012
++ VJE = 0.712
++ MJE = 0.3653
++ TF = 9.5E-010
++ XTF = 18
++ VTF = 3
++ ITF = 0.7
++ PTF = 0
++ CJC = 8.778E-012
++ VJC = 0.9955
++ MJC = 0.6991
++ XCJC = 1
++ TR = 3.4E-008
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.79
+.MODEL DIODE D
++ IS = 5.358E-015
++ N = 1.066
++ BV = 1000
++ IBV = 0.001
++ RS = 1E+004
++ CJO = 0
++ VJ = 1
++ M = 0.5
++ FC = 0
++ TT = 0
++ EG = 1.11
++ XTI = 3
+.ENDS

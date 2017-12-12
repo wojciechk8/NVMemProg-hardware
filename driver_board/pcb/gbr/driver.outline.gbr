@@ -1,0 +1,17 @@
+G04 start of page 4 for group 2 idx 2 *
+G04 Title: NVMemProg_Driver, outline *
+G04 Creator: pcb 1.99z *
+G04 CreationDate: Mon Nov  7 15:47:14 2016 UTC *
+G04 For: wojtek *
+G04 Format: Gerber/RS-274X *
+G04 PCB-Dimensions (mil): 4291.34 5354.33 *
+G04 PCB-Coordinate-Origin: lower left *
+%MOIN*%
+%FSLAX25Y25*%
+%LNOUTLINE*%
+%ADD38C,0.0098*%
+G54D38*X427165Y533465D02*Y1969D01*
+X1969D01*
+Y533465D01*
+X427165D01*
+M02*

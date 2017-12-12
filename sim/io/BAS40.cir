@@ -1,0 +1,64 @@
+*
+*******************************************
+*
+*BAS40-06
+*
+*NXP Semiconductors
+*
+*General-purpose Schottky diodes
+*
+*
+*
+*
+*IFSM = 200mA @ tp = 10ms
+*VF   = 1V    @ IF = 40mA
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*Package pinning does not match Spice model pinning.
+*Package: SOT23
+*
+*Package Pin 1: Cathode                  D1
+*Package Pin 2: Cathode                  D2
+*Package Pin 3: Anode;Anode              D1;D2
+*
+*
+*
+*Simulator: PSPICE
+*
+*******************************************
+*#
+.SUBCKT BAS40 1 2
+*
+* The Resistors do not
+* reflect physical devices.
+* Instead they improve modeling
+* in the reverse mode of
+* operation.
+*
+R1 1 2 6.659E+08
+D1 1 2 BAS40
+*
+.MODEL BAS40 D(
++ IS = 1.419E-08
++ N = 1.025
++ BV = 44
++ IBV = 1.255E-07
++ RS = 4.942
++ CJO = 4.046E-12
++ VJ = 0.323
++ M = 0.4154
++ FC = 0.5
++ TT = 0
++ EG = 0.69
++ XTI = 2)
+.ENDS
+*
+

@@ -1,0 +1,69 @@
+*
+**********************************************************
+*
+* BC817
+*
+* NXP Semiconductors
+*
+* General purpose NPN transistor
+* IC   = 500 mA
+* VCEO = 45 V 
+* hFE  = 100 - 600 @ 1V/100mA
+* 
+*
+*
+*
+* Package pinning does not match Spice model pinning.
+* Package: SOT 23
+* 
+* Package Pin 1: Base
+* Package Pin 2: Emitter
+* Package Pin 3: Collector
+* 
+*
+* 
+* Simulator: Spice 2        
+*
+**********************************************************
+*# 
+.MODEL QBC817 NPN
++    IS = 9.198E-14
++    NF = 1.003
++    ISE = 4.468E-16
++    NE = 1.65
++    BF = 338.8 
++    IKF = 0.4913
++    VAF = 107.9
++    NR = 1.002
++    ISC = 5.109E-15
++    NC = 1.071 
++    BR = 29.48
++    IKR = 0.193
++    VAR = 25
++    RB = 1
++    IRB = 1000
++    RBM = 1 
++    RE = 0.2126
++    RC = 0.143
++    XTB = 0
++    EG = 1.11
++    XTI = 3
++    CJE = 3.825E-11 
++    VJE = 0.7004
++    MJE = 0.364
++    TF = 5.229E-10
++    XTF = 219.7
++    VTF = 3.502 
++    ITF = 7.257
++    PTF = 0
++    CJC = 1.27E-11
++    VJC = 0.4431
++    MJC = 0.3983 
++    XCJC = 0.4555
++    TR = 7E-11
++    CJS = 0
++    VJS = 0.75
++    MJS = 0.333
++    FC = 0.905
+*## 
+*

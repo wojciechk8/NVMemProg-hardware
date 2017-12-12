@@ -1,0 +1,173 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity univ is
+generic
+(
+  NUM_MEM_PINS : natural := 48;
+  NUM_ADDR_DECODER : natural := 50
+);
+port
+(
+  data_fx : inout std_logic_vector(15 downto 0);
+  addr_fx : in std_logic_vector(8 downto 0);
+  data_dir : in std_logic;
+  ctl_fx : in std_logic_vector(4 downto 0);
+  rdy_fx : out std_logic_vector(1 downto 0);
+  clk_fx : in std_logic;  -- not used
+  
+  reg_addr : in std_logic_vector(5 downto 0);
+  reg_data : in std_logic_vector(7 downto 0); -- [7:6] not used
+  reg_wr : in std_logic;
+  reg_rd : in std_logic;  -- not used
+
+  mem_pin : inout std_logic_vector(NUM_MEM_PINS-1 downto 0)
+);
+end univ;
+
+architecture rtl of univ is
+  
+  component MEM_MUX
+    port
+    (
+      mem_mux_out : out std_logic;
+      mem_mux_oe : out std_logic;
+      data_dir : in std_logic;
+      
+      data_fx_in : in std_logic_vector(15 downto 0);  -- from fx to mem
+      addr_fx : in std_logic_vector(8 downto 0);
+      ctl_fx : in std_logic_vector(4 downto 0);
+
+      reg_select : in std_logic;
+      reg_clk : in std_logic;
+      reg_data_in : in std_logic_vector(5 downto 0)
+    );
+  end component;
+  
+  component DATA_FX_MUX
+    generic
+    (
+      NUM_MEM_PINS : natural
+    );
+    port
+    (
+      data_fx_mux_out : out std_logic;
+      data_fx_mux_oe : out std_logic;
+      data_dir : in std_logic;
+      
+      mem_pin_in : in std_logic_vector(NUM_MEM_PINS-1 downto 0); -- from mem to fx
+      
+      reg_select : in std_logic;
+      reg_clk : in std_logic;
+      reg_data_in : in std_logic_vector(5 downto 0)
+    );
+  end component;
+  
+  component RDY_FX_MUX
+    generic
+    (
+      NUM_MEM_PINS : natural
+    );
+    port
+    (
+      rdy_fx_mux_out : out std_logic;
+      
+      mem_pin_in : in std_logic_vector(NUM_MEM_PINS-1 downto 0); -- from mem to fx
+      
+      reg_select : in std_logic;
+      reg_clk : in std_logic;
+      reg_data_in : in std_logic_vector(5 downto 0)
+    );
+  end component;
+  
+  signal mem_pin_buf : std_logic_vector(NUM_MEM_PINS-1 downto 0);
+  signal mem_pin_oe_buf : std_logic_vector(NUM_MEM_PINS-1 downto 0);
+  signal data_fx_buf : std_logic_vector(15 downto 0);
+  signal data_fx_oe_buf : std_logic_vector(15 downto 0);
+  
+  signal reg_addr_decoder : std_logic_vector(NUM_ADDR_DECODER-1 downto 0);
+  signal reg_data_decoder : std_logic_vector(15 downto 0);
+  signal reg_data_decoder_en : std_logic;
+  
+  signal reg_wr_buf : std_logic;
+  
+begin
+
+  reg_wr_buf <= not reg_wr;
+
+  GEN_MEM_MUX: 
+    for I in 0 to NUM_MEM_PINS-1 generate
+      MEM_MUX_X : MEM_MUX port map
+      (
+        mem_mux_out => mem_pin_buf(I),
+        mem_mux_oe => mem_pin_oe_buf(I),
+        data_dir => data_dir,
+        data_fx_in => data_fx,
+        addr_fx => addr_fx,
+        ctl_fx => ctl_fx,
+        reg_select => reg_addr_decoder(I),
+        reg_clk => reg_wr_buf,
+        reg_data_in => reg_data(5 downto 0)
+      );
+      with mem_pin_oe_buf(I) select
+        mem_pin(I) <= mem_pin_buf(I) when '1',
+                      'Z' when others;
+    end generate GEN_MEM_MUX;
+  
+  GEN_DATA_FX_MUX: 
+    for I in 0 to 15 generate
+      DATA_FX_MUX_X : DATA_FX_MUX
+      generic map
+      (
+        NUM_MEM_PINS => NUM_MEM_PINS
+      )
+      port map
+      (
+        data_fx_mux_out => data_fx_buf(I),
+        data_fx_mux_oe => data_fx_oe_buf(I),
+        data_dir => data_dir,
+        mem_pin_in => mem_pin,
+        reg_select => reg_data_decoder(I),
+        reg_clk => reg_wr_buf,
+        reg_data_in => reg_addr
+      );
+      with data_fx_oe_buf(I) select
+        data_fx(I) <= data_fx_buf(I) when '1',
+                      'Z' when others;
+    end generate GEN_DATA_FX_MUX;
+  
+  GEN_RDY_FX_MUX: 
+    for I in 0 to 1 generate
+      RDY_FX_MUX_X : RDY_FX_MUX
+      generic map
+      (
+        NUM_MEM_PINS => NUM_MEM_PINS
+      )
+      port map
+      (
+        rdy_fx_io_out => rdy_fx(I),
+        mem_pin_in => mem_pin,
+        reg_select => reg_addr_decoder(I+NUM_MEM_PINS),
+        reg_clk => reg_wr_buf,
+        reg_data_in => reg_data(5 downto 0)
+      );
+    end generate GEN_RDY_FX_MUX;
+    
+
+  GEN_REG_ADDR_DECODER:
+    for I in 0 to NUM_ADDR_DECODER-1 generate
+      reg_addr_decoder(I) <= '1' when (to_unsigned(I, 6) = unsigned(reg_addr))
+                             else '0';
+    end generate GEN_REG_ADDR_DECODER;
+  
+  GEN_REG_DATA_DECODER:
+    for I in 0 to 15 generate
+      reg_data_decoder(I) <= '1' when (to_unsigned(I, 4) = unsigned(reg_data(3 downto 0))) and reg_data_decoder_en = '1'
+                             else '0';
+    end generate GEN_REG_DATA_DECODER;
+
+  reg_data_decoder_en <= not (reg_data(4) or reg_data(5)) when unsigned(reg_addr) < NUM_MEM_PINS
+                         else '0';
+  
+end rtl;

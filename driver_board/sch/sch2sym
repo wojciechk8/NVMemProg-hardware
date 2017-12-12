@@ -1,0 +1,134 @@
+#!/usr/bin/perl
+# -*- perl -*-
+
+# Desc: Generates sheet symbol with ports from schematic
+#       ./sch2sym schematic.sch
+
+###############
+#   WARNING   #
+# Currently pinnumber and pinseq attributes are not added to pins #
+###################################################################
+
+$width = 5000;
+
+$input = $ARGV[0];
+$output = $input;
+$output =~ s/\.sch$/\./;
+$output .= "sym";
+open($outf, ">$output") || die "Could not open $output for output";
+
+print {$outf} "v 20150930 2\n";
+
+my @in_ports, @out_ports, @io_ports;
+
+while (<>) {
+  next if $_ !~ /^C.*(?:(?:(in)-1\.sym)|(?:(out)-1\.sym)|(?:(io)-1\.sym))/;
+
+  $port = "$1$2$3";
+
+  local $/ = "}\n";
+  if(<> =~ /refdes=(.+)\n/){
+    eval "push @"."$port"."_ports, \"$1\""
+  }
+}
+
+@in_ports = sort @in_ports;
+@out_ports = sort @out_ports;
+@io_ports = sort @io_ports;
+$in_num = scalar(@in_ports);
+$out_num = scalar(@out_ports)+scalar(@io_ports);
+if(scalar(@out_ports) && scalar(@io_ports)){
+  $out_num++;
+}
+$y_max = ($in_num, $out_num)[$in_num < $out_num]; # get max value
+$y_max = 200*$y_max+300;
+$y = $y_max;
+$seq = 1;
+
+# draw box, refdes, filename
+print {$outf} <<"EOF";
+B 500 200 $width @{[$y+500]} 3 30 1 0 -1 -1 0 -1 -1 -1 -1 -1
+L 500 @{[$y+300]} @{[$width+500]} @{[$y+300]} 3 20 1 0 -1 -1
+T 500 @{[$y+750]} 8 10 1 1 0 0 1
+refdes=S?
+T @{[$width/2+500]} @{[$y+600]} 8 12 1 1 0 5 1
+source=$input
+EOF
+
+#~T 300 $y 5 10 0 0 0 6 1
+#~pinnumber=$seq
+#~T 300 $y 5 10 0 0 0 0 1
+#~pinseq=$seq
+
+# draw input ports
+foreach $port(@in_ports){
+  print {$outf} <<"EOF";
+P 200 $y 500 $y 1 0 0
+{
+T 1200 $y 5 10 1 1 0 1 1
+pinlabel=$port
+}
+H 5 20 1 0 -1 -1 0 -1 -1 -1 -1 -1 6
+M 1100,$y
+L 950,@{[$y+100]}
+L 500,@{[$y+100]}
+L 500,@{[$y-100]}
+L 950,@{[$y-100]}
+z
+EOF
+
+  $y -= 200;
+  $seq++;
+}
+
+$y = $y_max;
+$x = $width+500;
+# draw output ports
+foreach $port(@out_ports){
+  print {$outf} <<"EOF";
+P @{[$x+300]} $y $x $y 1 0 0
+{
+T @{[$x-700]} $y 5 10 1 1 0 7 1
+pinlabel=$port
+}
+H 5 20 1 0 -1 -1 0 -1 -1 -1 -1 -1 6
+M $x,$y
+L @{[$x-150]},@{[$y+100]}
+L @{[$x-600]},@{[$y+100]}
+L @{[$x-600]},@{[$y-100]}
+L @{[$x-150]},@{[$y-100]}
+z
+EOF
+
+  $y -= 200;
+  $seq++;
+}
+
+if(scalar(@out_ports) && scalar(@io_ports)){
+  $y -= 200;
+}
+
+# draw io ports
+foreach $port(@io_ports){
+  print {$outf} <<"EOF";
+P @{[$x+300]} $y $x $y 1 0 0
+{
+T @{[$x-700]} $y 5 10 1 1 0 7 1
+pinlabel=$port
+}
+H 5 20 1 0 -1 -1 0 -1 -1 -1 -1 -1 7
+M $x,$y
+L @{[$x-150]},@{[$y+100]}
+L @{[$x-450]},@{[$y+100]}
+L @{[$x-600]},$y
+L @{[$x-450]},@{[$y-100]}
+L @{[$x-150]},@{[$y-100]}
+z
+EOF
+
+  $y -= 200;
+  $seq++;
+}
+
+
+close($outf) || die "Could not close $output";

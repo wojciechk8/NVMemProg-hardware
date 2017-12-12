@@ -1,0 +1,6 @@
+schematics sch/main.sch
+output-name	pcb/main
+
+skip-m4
+
+gnetlist partslist3 -o main.parts

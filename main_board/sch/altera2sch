@@ -1,0 +1,101 @@
+#!/usr/bin/perl
+# -*- perl -*-
+
+# Desc: Converts ASCII pinout file from Quartus to geda schematic ports
+#       ./altera2sch file.pin
+
+$output = "pins.sch";
+open($outf, ">$output") || die "Could not open $output for output";
+
+$y = 10000;
+
+print {$outf} "v 20150930 2\n";
+
+while (<>) {
+  next if /^\*/;
+  s/^\s+//;
+  s/\s+$//;
+  s/[\s\t]+/ /g;
+  s/[\r\n]+$//;
+  s/\s*:\s*/:/g;
+
+  $_ = uc;
+  @data = split(':', $_);
+
+  if($data[0] =~ /RESERVED.*/){
+    $y -= 200;
+  }
+  next if $data[6] ne "Y";
+
+  $num = $data[1];
+  $dir = $data[2];
+
+  $netname = 0;
+
+  $name = $data[0];
+  if($name =~ /MEM_PIN\[(\d+)\]/){
+    $name = "MEM_PIN_$1";
+    $netname = "MEM_PIN_$1_R";
+  }elsif($name =~ /DATA_FX\[(\d+)\]/){
+    $name = "FX_D$1";
+  }elsif($name =~ /ADDR_FX\[(\d+)\]/){
+    $name = "FX_A$1";
+  }elsif($name =~ /CTL_FX\[(\d+)\]/){
+    $name = "FX_CTL$1";
+  }elsif($name =~ /RDY_FX\[(\d+)\]/){
+    $name = "FX_RDY$1";
+  }elsif($name =~ /REG_ADDR\[(\d+)\]/){
+    $name = "8051_A$1";
+  }elsif($name =~ /REG_DATA\[(\d+)\]/){
+    $name = "8051_D$1";
+  }elsif($name =~ /REG_(WR)|(RD)/){
+    $name = "8051_$1$2#";
+  }elsif($name =~ /DATA_DIR/){
+    $name = "FX_DIR";
+  }elsif($name =~ /CLK_FX/){
+    $name = "FX_CLK";
+  }
+
+  if($dir eq "INPUT"){
+    $port = "in-1.sym";
+    $portval = "INPUT";
+  }elsif($dir eq "OUTPUT"){
+    $port = "out-1.sym";
+    $portval = "OUTPUT";
+  }else{
+    $port = "io-1.sym";
+    $portval = "IO";
+  }
+
+# draw port
+  print {$outf} <<"EOF";
+C 0 @{[$y-200]} 1 0 1 $port
+{
+T 0 @{[$y+1400]} 5 10 0 0 0 6 1
+symversion=1.0
+T 0 @{[$y+1200]} 5 10 0 0 0 6 1
+value=$portval
+T -900 $y 5 10 1 1 0 7 1
+refdes=$name
+T 0 @{[$y+1600]} 5 10 0 0 0 6 1
+device=none
+}
+EOF
+
+# draw net
+  print {$outf} "N 0 $y 1500 $y 4\n";
+  if($netname){
+    print {$outf} <<"EOF";
+{
+T 100 @{[$y+50]} 5 8 1 1 0 0 1
+netname=$netname
+}
+EOF
+  }
+
+  print {$outf} "T 2000 $y 5 8 1 1 0 0 1\n$num\n";
+
+  $y -= 200;
+}
+
+close($outf) || die "Could not close $output";

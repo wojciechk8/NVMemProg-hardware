@@ -1,0 +1,18 @@
+Main board:
+- Add U33, R39-R42, C35, C38, C39 to the pcb
+- Separate VPP and VCC switches by connecting second part of U63
+  (replace DC_OK with D input of the U63)
+- Additional linear regulator for VPP (ability to set lower voltages)
+- Maybe better DC-DC converters (higher freq, smaller)
+- Lower output currents (250mA for VCC, 125mA for VPP)
+- Remove DC_IN circuit (only USB powered)
+
+
+Driver board:
+- Screw holes at the corners
+- Add serial resistors to C1, C2
+
+
+Common:
+- Better connectors (maybe SMD) between main and driver board
+- Move pcb design to pcb-rnd

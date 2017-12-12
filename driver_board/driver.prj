@@ -1,0 +1,6 @@
+schematics sch/driver.sch
+output-name	pcb/driver
+
+skip-m4
+
+gnetlist partslist3 -o driver.parts

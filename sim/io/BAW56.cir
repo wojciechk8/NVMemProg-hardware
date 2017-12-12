@@ -1,0 +1,64 @@
+*
+*******************************************
+*
+*BAW56
+*
+*NXP Semiconductors
+*
+*High-speed switching diode 
+*
+*
+*
+*
+* 
+*
+*
+*
+*
+*
+*
+*VRRM = 90V
+*IFRM = 500mA @ tp = 
+*trr  = 4ns
+*
+*
+*Package pinning does not match Spice model pinning.
+*Package: SOT23
+*
+*Package Pin 1: Cathode      D1 
+*Package Pin 2: Cathode      D2
+*Package Pin 3: common Anode 
+*
+*
+*
+*Simulator: SPICE3
+*
+*******************************************
+*#
+* Please note: This device is an array and the
+* symbol has to be placed twice on the schematic
+*
+.SUBCKT BAW56 1 2
+* 
+* The resistor R1 does not reflect 
+* a physical device.  Instead it
+* improves modeling in the reverse 
+* mode of operation.
+*
+R1 1 2 2.3E+9
+D1 1 2 BAW56
+*
+.MODEL BAW56 D
++ IS = 1.705E-9
++ N = 1.71
++ BV = 87
++ IBV = 0.0003
++ RS = 1.022
++ CJO = 1.798E-12
++ VJ = 1.032
++ M = 0.2987
++ FC = 0.5
++ TT = 3.606E-9 
+.ENDS
+*
+

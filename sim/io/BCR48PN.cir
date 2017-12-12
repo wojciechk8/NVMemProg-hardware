@@ -1,0 +1,53 @@
+.SUBCKT BCR48PNnpn 1 2 3
+* BRT macro model
+* External node
+* Node 1 -> BRT_C
+* Node 2 -> BRT_B
+* Node 3 -> BRT_E
+QOUT 1 4 3 T0357
+R1   2 4 47k
+R2   4 3 47k
+*****************************************
+* T0357 SPICE MODEL (SIMILAR TO BC846)  *
+*****************************************
+.MODEL T0357 NPN (IS=20.000F NF=1.010
++ BF=320.0 VAF=25.17 IKF=0.2084
++ ISE=55.668F NE=2.567 NR=1.015
++ BR=7.745 VAR=14.000 IKR=1.000
++ ISC=1.084P NC=4.063 RB=9.000
++ IRB=0.100M RBM=4.500 RE=0.186
++ RC=1.3 CJE=13.050P VJE=0.690
++ MJE=0.375 FC=0.750 CJC=4.100P
++ VJC=0.750 MJC=0.420 XCJC=0.650
++ TF=0.620N TR=2.5N PTF=1.000
++ XTF=68.000 VTF=1.000 ITF=0.720
++ XTB=1.181 EG=1.110 XTI=4.300
++ KF=10.000F AF=1.000)
+.ENDS
+*
+.SUBCKT BCR48PNpnp 1 2 3
+* BRT macro model
+* External node
+* Node 1 -> BRT_C
+* Node 2 -> BRT_B
+* Node 3 -> BRT_E
+QOUT 1 4 3 T0358
+R1   2 4 2.2k
+R2   4 3 47k
+*****************************************
+* T0358 SPICE MODEL (SIMILAR TO BC856)  *
+*****************************************
+.MODEL T0358 PNP (IS=28.000F NF=1.000
++ BF=430 VAF=43.000 IKF=0.093
++ ISE=24.903F NE=2.234 NR=1.005
++ BR=4.800 VAR=6.960 IKR=0.932
++ ISC=0.125P NC=2.074 RB=2.200
++ IRB=0.100M RBM=1.500 RE=0.1593
++ RC=2.026 CJE=11.800P VJE=1.000
++ MJE=0.435 FC=0.750 CJC=8.700P
++ VJC=0.900 MJC=0.600 XCJC=0.650
++ TF=0.600N TR=2.604N PTF=1.000
++ XTF=6.500 VTF=2.000 ITF=0.314
++ XTB=1.300 EG=1.110 XTI=3.300
++ KF=5.000F AF=1.000)
+.ENDS

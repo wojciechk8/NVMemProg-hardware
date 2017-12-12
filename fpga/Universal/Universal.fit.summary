@@ -1,0 +1,12 @@
+Fitter Status : Successful - Sat May 20 01:25:48 2017
+Quartus II Version : 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition
+Revision Name : Universal
+Top-level Entity Name : univ
+Family : Cyclone
+Device : EP1C3T144C8
+Timing Models : Final
+Total logic elements : 1,672 / 2,910 ( 57 % )
+Total pins : 98 / 104 ( 94 % )
+Total virtual pins : 0
+Total memory bits : 0 / 59,904 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )

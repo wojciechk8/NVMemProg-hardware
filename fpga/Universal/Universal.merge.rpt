@@ -1,0 +1,193 @@
+Partition Merge report for Universal
+Mon Nov 28 03:14:08 2016
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Statistics
+  5. Partition Merge Resource Usage Summary
+  6. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Partition Merge Summary                                                ;
++------------------------+-----------------------------------------------+
+; Partition Merge Status ; Successful - Mon Nov 28 03:14:08 2016         ;
+; Quartus II Version     ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
+; Revision Name          ; Universal                                     ;
+; Top-level Entity Name  ; univ                                          ;
+; Family                 ; Cyclone                                       ;
+; Total logic elements   ; 2,068                                         ;
+; Total pins             ; 98                                            ;
+; Total virtual pins     ; 0                                             ;
+; Total memory bits      ; 0                                             ;
+; Total PLLs             ; 0                                             ;
++------------------------+-----------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Source File            ;                                ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                ;
++---------------------------------------------+------+--------------------------------+
+; Statistic                                   ; Top  ; hard_block:auto_generated_inst ;
++---------------------------------------------+------+--------------------------------+
+; Total logic elements                        ; 2068 ; 0                              ;
+;     -- Combinational with no register       ; 1672 ; 0                              ;
+;     -- Register only                        ; 396  ; 0                              ;
+;     -- Combinational with a register        ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Logic element usage by number of LUT inputs ;      ;                                ;
+;     -- 4 input functions                    ; 0    ; 0                              ;
+;     -- 3 input functions                    ; 0    ; 0                              ;
+;     -- 2 input functions                    ; 0    ; 0                              ;
+;     -- 1 input functions                    ; 0    ; 0                              ;
+;     -- 0 input functions                    ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Logic elements by mode                      ;      ;                                ;
+;     -- normal mode                          ; 0    ; 0                              ;
+;     -- arithmetic mode                      ; 0    ; 0                              ;
+;     -- qfbk mode                            ; 0    ; 0                              ;
+;     -- register cascade mode                ; 0    ; 0                              ;
+;     -- synchronous clear/load mode          ; 0    ; 0                              ;
+;     -- asynchronous clear/load mode         ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Total registers                             ; 396  ; 0                              ;
+; Virtual pins                                ; 0    ; 0                              ;
+; I/O pins                                    ; 98   ; 0                              ;
+; DSP block 9-bit elements                    ; 0    ; 0                              ;
+; Total memory bits                           ; 0    ; 0                              ;
+; Total RAM block bits                        ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Connections                                 ;      ;                                ;
+;     -- Input Connections                    ; 0    ; 0                              ;
+;     -- Registered Input Connections         ; 0    ; 0                              ;
+;     -- Output Connections                   ; 0    ; 0                              ;
+;     -- Registered Output Connections        ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Internal Connections                        ;      ;                                ;
+;     -- Total Connections                    ; 7828 ; 0                              ;
+;     -- Registered Connections               ; 2418 ; 0                              ;
+;                                             ;      ;                                ;
+; External Connections                        ;      ;                                ;
+;     -- Top                                  ; 0    ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Partition Interface                         ;      ;                                ;
+;     -- Input Ports                          ; 32   ; 0                              ;
+;     -- Output Ports                         ; 2    ; 0                              ;
+;     -- Bidir Ports                          ; 64   ; 0                              ;
+;                                             ;      ;                                ;
+; Registered Ports                            ;      ;                                ;
+;     -- Registered Input Ports               ; 0    ; 0                              ;
+;     -- Registered Output Ports              ; 0    ; 0                              ;
+;                                             ;      ;                                ;
+; Port Connectivity                           ;      ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 0                              ;
+;     -- Output Ports driven by GND           ; 0    ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 0                              ;
+;     -- Output Ports with no Source          ; 0    ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0    ; 0                              ;
++---------------------------------------------+------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++------------------------------------------------------+
+; Partition Merge Resource Usage Summary               ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 2068   ;
+;     -- Combinational with no register       ; 1672   ;
+;     -- Register only                        ; 396    ;
+;     -- Combinational with a register        ; 0      ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 1510   ;
+;     -- 3 input functions                    ; 146    ;
+;     -- 2 input functions                    ; 16     ;
+;     -- 1 input functions                    ; 0      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 2068   ;
+;     -- arithmetic mode                      ; 0      ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 0      ;
+;     -- asynchronous clear/load mode         ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 396    ;
+; I/O pins                                    ; 98     ;
+; Maximum fan-out node                        ; reg_wr ;
+; Maximum fan-out                             ; 396    ;
+; Total fan-out                               ; 7828   ;
+; Average fan-out                             ; 3.61   ;
++---------------------------------------------+--------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Partition Merge
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Nov 28 03:14:07 2016
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off Universal -c Universal --merge=on
+Critical Warning: Current license file does not support incremental compilation. The Quartus II software removes all the user-specified design partitions in the design automatically.
+Info: Using synthesis netlist for partition "Top"
+Info: Resolved and merged 1 partition(s)
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Warning: Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk_fx"
+    Warning (15610): No output dependent on input pin "reg_data[6]"
+    Warning (15610): No output dependent on input pin "reg_data[7]"
+    Warning (15610): No output dependent on input pin "reg_rd"
+Info: Implemented 2166 device resources after synthesis - the final resource count might be different
+    Info: Implemented 32 input pins
+    Info: Implemented 2 output pins
+    Info: Implemented 64 bidirectional pins
+    Info: Implemented 2068 logic cells
+Info: Quartus II Partition Merge was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 244 megabytes
+    Info: Processing ended: Mon Nov 28 03:14:08 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

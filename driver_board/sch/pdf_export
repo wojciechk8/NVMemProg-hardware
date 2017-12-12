@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Desc: Generates single pdf from all schematics in current directory
+
+set -e
+
+PDFS=""
+DATE=`date +%Y-%m-%d`
+
+for f in *.sch
+do
+  #sed -i "s/date=.*/date=$DATE/" $f
+  num=`grep -oP '(?<=page=)\d+' $f`
+  num=`echo $(printf '%03d' $num)`
+  gaf export -o "${num}_${f%.sch}.pdf" $f
+  PDFS="$PDFS ${num}_${f%.sch}.pdf"
+done
+
+PDFS=`echo $PDFS | xargs -n1 | sort -u | xargs`
+
+OUT=`echo $PDFS | cut -f1 -d' '`
+OUT=${OUT#*_}
+pdfunite $PDFS $OUT
+
+rm $PDFS

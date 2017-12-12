@@ -1,0 +1,5 @@
+*.pcb~
+*.sch~
+*.save
+*.sch#
+*.pcb-
