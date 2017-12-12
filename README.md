@@ -23,10 +23,10 @@ TODO
 TODO
 
 ## Firmware
-...
+Firmware for the microcontroller is available [here](https://github.com/wojciechk8/NVMemProg-firmware).
 
 ## Host PC Software
-...
+Host PC software is available [here](https://github.com/wojciechk8/NVMemProg-host).
 
 ## Benchmark
 TODO
