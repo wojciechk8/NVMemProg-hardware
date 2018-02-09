@@ -1,2 +1,4 @@
-(component-library "./sym")
+(component-library "sym")
 (source-library  ".")
+
+(component-library-search "../../geda-sym/sym")

@@ -1,2 +1,4 @@
 (component-library "sch/sym")
 (source-library  "sch")
+
+(component-library-search "../geda-sym/sym")
