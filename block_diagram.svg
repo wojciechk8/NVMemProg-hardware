@@ -429,14 +429,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.71648337"
-     inkscape:cx="507.40512"
-     inkscape:cy="197.34174"
+     inkscape:zoom="0.50663025"
+     inkscape:cx="376.69194"
+     inkscape:cy="301.55813"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1280"
-     inkscape:window-height="972"
+     inkscape:window-width="1440"
+     inkscape:window-height="848"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1202,5 +1202,23 @@
          x="751.18109"
          y="375.59052"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.5px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'Sans Italic';text-align:start;text-anchor:start">p. 4, 5</tspan></text>
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.77165351;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1143"
+       cx="478.34644"
+       cy="318.89764"
+       r="3.5433071" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.77165353;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1143-3"
+       cx="372.04721"
+       cy="318.89764"
+       r="3.5433071" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.77165353;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1143-6"
+       cx="605.90552"
+       cy="283.46457"
+       r="3.5433071" />
   </g>
 </svg>
