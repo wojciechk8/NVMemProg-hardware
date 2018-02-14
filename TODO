@@ -6,6 +6,8 @@ Main board:
 - Maybe better DC-DC converters (higher freq, smaller)
 - Lower output currents (250mA for VCC, 125mA for VPP)
 - Remove DC_IN circuit (only USB powered)
+- Add soft start to meet USB power requirements (max. 100mA at power-up)
+  (this could be solved together with DC converters redesign)
 
 
 Driver board:
